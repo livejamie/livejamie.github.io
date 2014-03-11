@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Awesome Test Page</title>
+    <meta property="og:description" content="">
+    <meta property="og:caption" content="">
+    <meta property="og:image" content="">
+    <style>
+      body {font-family:Helvetica, Arial, sans-serif; color:#333; height:100%; margin:0; padding:0; font-size:13px;}
+      .mktTwoCol * {box-sizing:border-box; -moz-box-sizing:border-box;}
+      .mktTwoCol {max-width:720px; margin:auto; min-width:320px;} 
+      .mktTwoCol div {margin:0; padding:0;}
+      .mktTwoCol .mktHeader {width:100%; float:left; background:#919191;}
+      .mktTwoCol .mktLeft {padding:10px; width:70%; float:left; background-color:#EACCEE;}
+      .mktTwoCol .mktRight {padding:10px; width:30%; background-color:#D9A4DF; float:left;}
+      .mktTwoCol .mktFooter {float:left; width:100%; background-color:#ccc; min-height:100px;}
+      .mktTwoCol .mktImageFull {width:100%; display:block;}
+      .mktTwoCol .mktClear {clear:both; float:none;}
+      .mktTwoCol .mktLeft > .mktElem {float:left; width:100%; margin:5px 0;}
+      .mktTwoCol .mktRight > .mktElem {float:left; width:100%; margin:5px 0;}
+      .mktTwoCol .mktDropTarget .mktElem:last-child:after {
+        content:"."; display:block; clear:both; 
+        height:0; visibility: hidden; width:0;
+      }
+
+      @media only screen and (max-width: 480px) {
+        .mktTwoCol .mktLeft {
+          width:100%;
+        }
+        .mktTwoCol .mktRight {
+          width:100%;
+          padding:0px;
+        }
+        .mktTwoCol .mktRight > .mktElem {
+          width:50%;
+          padding:10px;
+          padding-right:5px;
+        }
+        .mktTwoCol .mktRight > .mktElem:last-child {
+          padding-left:5px;
+          padding-right:10px;
+        }
+      }
+
+      @media only screen and (max-width:320px) {
+        .mktTwoCol .mktRight > .mktElem {
+          width:100%;
+          padding:10px;
+        }
+        .mktTwoCol .mktRight > .mktElem:last-child {
+          padding:10px;
+        }
+      }
+    </style>
+    {{#edit}}
+      <link rel="stylesheet" href="/stylesheets/style.css">
+    {{/edit}}
+  </head>
+  <body>
+    {{#template}}
+      <div class='mktTwoCol'>
+      <div class="mktHeader mktDropTarget" id="header">
+        {{{header}}}
+        {{^header}}
+          <div class="mktElem mktImage">
+            <img class='mktImageFull' src="images/header-graphic-960.jpg">
+          </div>
+        {{/header}}
+      </div>
+      <div class="mktLeft mktDropTarget" id="primary">
+        {{{primary}}}
+        {{^primary}}
+          <div class='mktElem mktImage'>
+            <img class='mktImageFull' src="images/feature-graphic-575.jpg">
+          </div>
+          <div class='mktElem mktRichText'>
+            <h2>Main header</h2>
+            <ul>
+              <li>content item 1</li>
+              <li>content item 2</li>
+              <li>content item 2</li>
+            </ul>
+          </div>
+        {{/primary}}
+      </div>
+      <div class="mktRight mktDropTarget" id="secondary">
+        {{{secondary}}}
+        {{^secondary}}
+          <div class='mktElem mktBox'>
+            <div class='mktElem mktImage'>
+              <img class='mktImageFull' src="images/sidebar-graphic-360.jpg">
+            </div>
+            <div class='mktElem mktRichText'>
+              <h4>Some header</h4>
+              This is some text about the image that's above it!
+            </div>
+          </div>
+          <div class='mktElem mktBox'>
+            <div class='mktImage mktElem'>
+              <img class='mktImage mktImageFull' src="images/sidebar-graphic-360.jpg">
+            </div>
+            <div class='mktRichText mktElem'>
+              <h4>Some header #2 </h4>
+              This is some text about the image that's above it #2!
+            </div>
+          </div>
+        {{/secondary}}
+      </div>
+      <div class='mktClear'></div>
+      <div class="mktFooter mktDropTarget" id="footer">
+        {{{footer}}}
+        {{^footer}}
+          <div class='mktElem mktRichText'>
+            Here's some text in the footer
+          </div>
+        {{/footer}}
+      </div>
+    </div>
+    {{/template}}
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Awesome Test Page</title>
+    <meta property="og:description" content="">
+    <meta property="og:caption" content="">
+    <meta property="og:image" content="">
+    <style>
+      body {margin:0; padding:0; font-family: Helvetica, Arial, sans-serif; font-size:13px;}
+      #header {position:fixed; line-height:75px; height:75px; background-color: purple; color:white;
+        width:100%;
+      }
+      #framesbox {padding-top:75px;}
+      #framesbox iframe {height:1000px}
+      .frameSwitcher {width:100%;}
+      .frameSwitcher .frameBtn{cursor:pointer; width:100px; height:25px; margin:5px 10px; float:left;}
+      .frameSwitcher .frameBtn.selected {font-weight: bold;}
+      .framewrap {display:none;}
+      .framewrap.selected{display:block;}
+      .mktClear {clear:both; float:none;}
+
+    </style>
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/tinymce/tinymce.js"></script>
+    <script src="/browserify.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <div id="header">
+      MKTO header goes here!
+    </div>
+    <div id="editor" class="mktEditor">
+
+    </div>
+    <div id="framesbox">
+      <div class="frameSwitcher">
+        <div class="frameBtn selected">Edit</div>
+        <div class="frameBtn">Desktop</div>
+        <div class="frameBtn">iPhone</div>
+        <div class="frameBtn">Nexus 4</div>
+        <div class="mktClear"></div>
+      </div>
+      <div class='framewrap selected' id='editorFrame'>
+        <iframe class="frame" src="/{{name}}?edit=true" width="960" border=0></iframe>
+      </div>
+      <div class='framewrap' id='desktopFrame'>
+        <iframe class="frame" src="/{{name}}" width="960" border=0></iframe>
+      </div>
+      <div class='framewrap' id='iPhoneFrame'>
+        <iframe class="frame" src="/{{name}}" width="320" border=0></iframe>
+      </div>
+      <div class='framewrap' id='nexus4Frame'>
+        <iframe class="frame" src="/{{name}}" width="480" border=0></iframe>
+      </div>  
+    </div>
+  </body>
+</html>
