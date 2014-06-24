@@ -1,0 +1,12 @@
+## DKIM Meeting
+---
+-  Remove Selector
+-  Domain (SDID) or Signing Domain
+-  Marketo-Provided Key or My Own Key
+-  Here's a public key go paste this into the DNS (This is what everybody uses)
+-  Generate my key 
+-  Active or Inactive for the domains (Check DNS status)
+-  Public Key would be displayed, instructions on how to be added
+-  Check status in real-time
+-  Verified/Pending Verification
+-  IF you need help call or email
